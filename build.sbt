@@ -9,3 +9,14 @@ libraryDependencies += "com.geirsson" %% "scalafmt-cli" % "1.3.0"
 
 enablePlugins(JmhPlugin)
 enablePlugins(JavaAppPackaging)
+
+fork in Test := true
+
+javaOptions in Test := Seq(
+ "-Xms768m",
+ "-Xmx768m",
+ "-Xloggc:gc.log",
+ "-verbose:gc",
+ "-XX:+PrintGCDetails",
+ "-XX:+PrintGCDateStamps"
+)
