@@ -13,8 +13,7 @@ enablePlugins(JavaAppPackaging)
 fork in Test := true
 
 javaOptions in Test := Seq(
- "-Xms768m",
- "-Xmx768m",
+ "-Xmx512m",
  "-Xloggc:gc.log",
  "-verbose:gc",
  "-XX:+PrintGCDetails",
